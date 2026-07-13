@@ -1,6 +1,6 @@
 # reliable-cs-icpr2026
 
-Companion repository for the ICPR 2026 paper on reliable citizen-science labels for deforestation mapping. It reproduces the linear SVM experiments that compare PRODES reference labels against campaign majority votes under several outlier filters and class-balancing strategies.
+Companion repository for the "Reliability-Aware Citizen Science for Environmental Machine Learning" ICPR 2026 paper on reliable citizen-science labels for deforestation mapping. It reproduces the linear SVM experiments that compare PRODES reference labels against campaign majority votes under several outlier filters and class-balancing strategies.
 
 ## What this repo reproduces
 
@@ -17,12 +17,29 @@ Correlation / Spearman analyses present in the archival notebooks are **not** pa
 ## Requirements
 
 - [Pixi](https://pixi.sh/) (environment and task runner)
-- Input CSVs under `data/` (already included)
+- Dataset from Hugging Face: [ebouhid/reliable-cs-icpr2026](https://huggingface.co/datasets/ebouhid/reliable-cs-icpr2026)
+
+## Dataset
+
+Download the train/test CSVs into `data/` before running experiments:
+
+```bash
+# with the Hugging Face CLI (https://huggingface.co/docs/huggingface_hub)
+hf download ebouhid/reliable-cs-icpr2026 --repo-type dataset --local-dir data
+```
+
+Alternatively, browse and download files from the [dataset page](https://huggingface.co/datasets/ebouhid/reliable-cs-icpr2026). The pipeline expects:
+
+```
+data/train/*.csv
+data/test/*.csv
+```
 
 ## Quick start
 
 ```bash
 pixi install
+hf download ebouhid/reliable-cs-icpr2026 --repo-type dataset --local-dir data
 pixi run reproduce
 ```
 
@@ -64,7 +81,7 @@ pixi run python -m reliable_cs --campaign landsat --seed 42
 ## Repository layout
 
 ```
-data/                  # train/test CSVs
+data/                  # train/test CSVs (from Hugging Face)
 src/reliable_cs/       # reproducible Python package
 notebooks/             # original notebooks (archival; not modified)
 metrics_tables/        # regenerated metrics (tracked)
@@ -77,4 +94,4 @@ The notebooks under `notebooks/` are the original exploratory sources. Prefer `p
 
 ## License / citation
 
-If you use this code or data, please cite the associated ICPR 2026 paper.
+If you use this code or data, please cite the associated ICPR 2026 paper. (BibTex pending...)
