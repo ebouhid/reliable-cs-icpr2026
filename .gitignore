@@ -1,3 +1,10 @@
 classification_reports/
 correlation_analysis/
+figures/
+.pixi/
 ._.DS_Store
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
