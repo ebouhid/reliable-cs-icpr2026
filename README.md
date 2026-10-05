@@ -1,6 +1,6 @@
 # reliable-cs-icpr2026
 
-Companion repository for the "Reliability-Aware Citizen Science for Environmental Machine Learning" ICPR 2026 paper on reliable citizen-science labels for deforestation mapping. It reproduces the linear SVM experiments that compare PRODES reference labels against campaign majority votes under several outlier filters and class-balancing strategies.
+Companion repository for the [Reliability-Aware Citizen Science for Environmental Machine Learning ICPR 2026 paper](https://link.springer.com/chapter/10.1007/978-3-032-31930-2_1) on reliable citizen-science labels for deforestation mapping. It reproduces the linear SVM experiments that compare PRODES reference labels against campaign majority votes under several outlier filters and class-balancing strategies.
 
 ## What this repo reproduces
 
